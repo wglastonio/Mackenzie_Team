@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            input {
+                margin: 0 0 0 30px;
+            }
+            .db {
+                font-size: 1.2em;
+                text-align: center;
+                margin: 2% 0% 2% 0%;
+            }
+            .format_h {
+                font-size: 2em;
+                text-align: center;
+                margin: 2% 0% 1% 0%;
+                font-weight: bold;
+            }
+            .format_b {
+                font-size: 1.5em;
+                text-align: center;
+                margin: 2% 0% 2% 0%;
+                font-weight: bold;
+            }
+            .image {
+                margin: 3% 0% 0% 0%;
+                text-align: center;               
+            }
+            #sports {
+                font-size: 1.5em;
+                text-align: center;
+                margin: 2% 0% 1% 0%;
+                font-weight: bold;
+            }
+            #team {
+                font-size: 1.5em;
+                text-align: center;
+                margin: 0% 0% 1% 0%;
+                font-weight: bold;
+            }
+            #players {
+                font-size: 1.5em;
+                text-align: center;
+                margin: 0% 0% 1% 0%;
+                font-weight: bold;
+            }
+            #color {
+                font-size: 1.5em;
+                text-align: center;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <p class="db">["Fórmula 1","Mercedes", "2 pilotos", "Prata", "Basquete", "Lakers", "6 jogadores", "Amarelo", "Futebol", "Real Madrid", "11 jogadores", "Branca"]</p><hr>
+        <div class="format_h">Qual cor você quer saber as informações?</div>
+        <form>
+            <div class="format_b">
+                <input type="radio" name="cor" value="mer" onClick="mostraTime('img/mercedes.png', 'sil')">
+                <label for="mer">Prata</label>
+                <input type="radio" name="cor" value="lak" onClick="mostraTime('img/lakers.png', 'yel')">
+                <label for="fer">Amarela</label>
+                <input type="radio" name="cor" value="rea" onClick="mostraTime('img/realmadrid.png', 'whi')">
+                <label for="red">Branca</label>
+            </div><hr>
+        </form>
+        
+        <div class="image">
+            <img id="image" src=""/>
+        </div>
+        
+        <div id="sports"></div>
+        <div id="team"></div>
+        <div id="players"></div>
+        <div id="color"></div>
+
+        <script>
+            var dataBase = ["Fórmula 1","Mercedes", "2 pilotos", "Prata", "Basquete", "Lakers", "6 jogadores", "Amarelo", "Futebol", "Real Madrid", "11 jogadores", "Branca"]
+            function mostraTime(imgTime, time) {                
+                if (time == 'sil') {
+                    document.getElementById('image').src = imgTime;
+                    document.getElementById('sports').innerHTML = dataBase[0];
+                    document.getElementById('team').innerHTML = dataBase[1];
+                    document.getElementById('players').innerHTML = dataBase[2];
+                    document.getElementById('color').innerHTML = dataBase[3];
+                }
+                if (time == 'yel') {
+                    document.getElementById('image').src = imgTime;
+                    document.getElementById('sports').innerHTML = dataBase[4];
+                    document.getElementById('team').innerHTML = dataBase[5];
+                    document.getElementById('players').innerHTML = dataBase[6];
+                    document.getElementById('color').innerHTML = dataBase[7];
+                }
+                if (time == 'whi') {
+                    document.getElementById('image').src = imgTime;
+                    document.getElementById('sports').innerHTML = dataBase[8];
+                    document.getElementById('team').innerHTML = dataBase[9];
+                    document.getElementById('players').innerHTML = dataBase[10];
+                    document.getElementById('color').innerHTML = dataBase[11];
+                }
+            }
+        </script>
+    </body>
+</html>
